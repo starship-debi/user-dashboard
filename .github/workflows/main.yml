@@ -1,0 +1,20 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run a simple build step
+        run: echo "Building user-dashboard..."
+      - name: Run a simple script
+        run: |
+          echo "Deploying user-dashboard..."
+          echo "User dashboard deployed successfully"
